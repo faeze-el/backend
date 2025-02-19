@@ -5,6 +5,10 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON
 app.use(cors()); // Allow CORS for frontend access
 
+app.get("/", (req, res)=> {
+  res.send('faeze service is working');
+});
+
 // Proxy API to bypass HTTPS restriction
 app.post("/by-pass-api", async (req, res) => {
   try {
